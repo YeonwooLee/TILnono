@@ -137,3 +137,110 @@ CREATE TABLE hedgehod(
 );
 ```
 
+
+
+
+
+> 오늘은 2021-04-28 입니다
+
+### 테이블에 행 추가
+
+```sql
+SQL> insert into hedgehog
+  2  (code, lastmating)
+  3  values
+  4  ('hm000','21/04/26');
+
+1 row created.
+
+SQL> commit; --commit까지 해줘야 반영됨
+```
+
+
+
+### 행 읽기 및 정렬
+
+```sql
+SQL> select * from hedgehog; -- hedgehog의 모든 행 가져옴
+SQL> select * from hedgehog where code='hf000'; -- hedgehog에서 code가 hf000인 것
+SQL> select code from hedgehog; -- hedgehog의 모든 행의 'code' 가져옴
+```
+
+
+
+```sql
+SELECT id, title, created FROM topic;
+ 
+SELECT * FROM topic WHERE id = 1;
+ 
+SELECT * FROM topic WHERE id > 1;
+ 
+SELECT id, title, created FROM topic WHERE id = 1;
+```
+
+
+
+```sql
+SELECT * FROM topic ORDER BY id DESC; --id를 기준으로 정렬함 desc=오름차순
+ 
+SELECT * FROM topic 
+    OFFSET 1 ROWS --인덱스 1번(0번시작)이후것 가져옴
+    FETCH NEXT 2 ROWS ONLY;--2개 가져옴
+```
+
+
+
+### 행 수정 및 삭제
+
+```sql
+update hedgehog --hedgehog 테이블을 업데이트 합니다
+	set 
+		code = '', --code는 ''로 바꿉니다
+		lastdelivery='' --lastdelivery는 ''로 바꿉니다
+	where
+		lastmating ='' --lastmating이 ''인 자료만 바꿉니다
+```
+
+
+
+```sql
+SQL> delete from hedgehog where code ='fault000'; 
+								--hegehog 테이블 중 code가 'fault000'인 row 삭제
+```
+
+
+
+
+
+### 테이블 삭제, PRIMARY KEY 설정, SEQUENCE
+
+
+
+```sql
+
+DROP TABLE hedgehog;
+
+CREATE TABLE hedgehog(
+	id NUMBER NOT NULL,
+	sex CHAR(1) NOT NULL,
+	lastmating DATE,
+	lastdelivery DATE,
+	CONSTRAINT PK_HEDGE PRIMARY KEY(id) -PK_HEDGE = PRIMARY KEY 이름
+										-PRIMARY KEY(id) id를 primary key로
+);
+
+CREATE SEQUENCE SEQ_HEDGE; --시퀀스제작
+
+INSERT INTO hedgehog
+	(id, sex, lastmating) VALUES (SEQ_HEDGE.NEXTVAL,'M','21/04/26');
+
+INSERT INTO hedgehog
+	(id, sex, lastmating) VALUES (SEQ_HEDGE.NEXTVAL,'M','21/04/26');
+
+INSERT INTO hedgehog
+	(id, sex, lastmating) VALUES (SEQ_HEDGE.NEXTVAL,'F','21/04/25');
+
+INSERT INTO hedgehog
+	(id, sex, lastmating) VALUES (SEQ_HEDGE.NEXTVAL,'F','21/04/26');
+```
+
