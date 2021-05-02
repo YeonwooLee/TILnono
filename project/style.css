@@ -1,0 +1,121 @@
+div.signArea{
+	float: right;
+
+}
+div.headerMainArea{
+	clear: both;
+	background: pink;
+	border-style: dashed;
+}
+div#siteInfoWrapper{
+	background: red;
+	height: 100%;
+	display: inline;
+}
+div#siteNameWrapper{
+	background: blue;
+	width: 50%;
+	margin-left: 10px;
+	display: inline-block;
+
+}
+h1, h2{
+	text-align: center;
+}
+a.noneDecoA{
+	text-decoration-line: none;
+	color: black;
+}
+
+div.searchArea{
+	background: yellow;
+	display: inline;
+}
+nav{
+	background: yellowgreen;
+}
+div.mainItem{
+	display: inline-block;
+	width: 20%;
+	line-height: 400%;
+	background: green;
+	margin-left: 4%;
+
+	cursor: pointer;
+	text-align: center;
+	font-size: 1em;
+}
+
+section.promotionSection{
+	background: yellow;
+	margin-top: 5%;
+}
+.promotingArticleArea{
+	width: 33%;
+	overflow: hidden;
+	display: inline-block;
+	height:500px;
+	object-fit: cover;	
+}
+.imgInDiv{
+	width: 100%;
+	height: 100%;
+
+}
+
+section.productSection{
+	background: red;
+	margin-top: 5%;
+
+}
+.productHedge:nth-child(1){
+	margin-left: 1.4%
+}
+.productHedge{
+	width: 18%;
+	overflow: hidden;
+	display: inline-block;
+	height:270px;
+	object-fit: cover;	
+	
+	margin-left: 1.5%;
+}
+
+.productSection article:nth-child(2){
+	margin-top: 5%;
+	background: black;
+}
+
+.productReptile:nth-child(1){
+	margin-left: 1.4%
+}
+.productReptile{
+	width: 18%;
+	overflow: hidden;
+	display: inline-block;
+	height:270px;
+	object-fit: cover;	
+	
+	margin-left: 1.5%;
+}
+p#hedge_info
+{
+	column-count: 2;
+	column-gap: 20px
+	column-width: 500px;
+	column-rule-style: outset;
+	column-rule-width: 2px;
+}
+.aInFooter{
+	text-align: center;
+}
+
+#productCategory1{
+	font-size: 2em;
+	color: yellow;
+}
+
+#productCategory2{
+	font-size: 2em;
+	color: white;
+}

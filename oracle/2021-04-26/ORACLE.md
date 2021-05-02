@@ -244,3 +244,51 @@ INSERT INTO hedgehog
 	(id, sex, lastmating) VALUES (SEQ_HEDGE.NEXTVAL,'F','21/04/26');
 ```
 
+
+
+### Join
+
+입력의 편의를 위해 테이블을 나눈다.
+
+
+
+hedgehog
+
+| id   | name   | sex  | character |
+| ---- | ------ | ---- | --------- |
+| 1    | 고순이 | f    | 착함      |
+| 2    | 두치   | m    | 못됨      |
+| 3    | 삼식이 | m    | 착함      |
+
+
+
+hedgehog ->hedgehog, author(강의에서 author써서 맥락없이 따라씀)
+
+-------------
+
+hedgehog
+
+|      | name   | sex  | author_id |
+| ---- | ------ | ---- | --------- |
+| 1    | 고순이 | f    | 1         |
+| 2    | 두치   | m    | 2         |
+| 3    | 삼식이 | m    | 1         |
+
+author
+
+| id   | character |
+| ---- | --------- |
+| 1    | 착함      |
+| 2    | 못됨      |
+
+
+
+```sql
+select h.ID he_id,
+    sex,
+    lastmating 
+    from hedgehog h
+        left join author 
+            on h.author_id = author.id;
+```
+

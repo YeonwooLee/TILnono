@@ -1,3 +1,9 @@
 프리미티브값은 변수에 값이 들어가는데 String 같은 (참조형?)데이터는 주소가 들어감
 
 그래서 equals로 비교해야지 ==으로 비교하면 값이랑 주소를 비교하게되서 같아도 다르다고 판단됨
+
+
+JDBC 정보
+String url = "jdbc:oracle:thin:@DESKTOP-E11BVG9:1521:xe";
+			String id = "yanoos";
+			String pw = "1234";
